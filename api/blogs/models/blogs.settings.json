@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "name": "Blogs",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "LongText": {
+      "type": "richtext"
+    },
+    "Image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "CreatedDate": {
+      "type": "datetime"
+    },
+    "SubTitle": {
+      "type": "text"
+    },
+    "PublishedDate": {
+      "type": "date"
+    },
+    "IsFeatured": {
+      "type": "boolean",
+      "default": false
+    },
+    "NavURL": {
+      "type": "string"
+    },
+    "Comments": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blog.comments"
+    },
+    "ShortText": {
+      "type": "text"
+    },
+    "Tages": {
+      "type": "component",
+      "repeatable": true,
+      "component": "blog.tages"
+    },
+    "PDF": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "blog_type": {
+      "model": "blog-type"
+    }
+  }
+}
